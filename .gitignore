@@ -37,7 +37,7 @@ ehthumbs.db
 Thumbs.db
 
 # I have no idea #
-.vsidx
-.cache
-.props
-.target
+*.vsidx
+*.cache
+*.props
+*.target
