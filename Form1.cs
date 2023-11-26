@@ -28,6 +28,7 @@ namespace MyAniList
            
         }
 
+        #region
         private void button1_Click(object sender, EventArgs e)
         {
             string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
@@ -43,5 +44,6 @@ namespace MyAniList
         {
 
         }
+        #endregion
     }
 }

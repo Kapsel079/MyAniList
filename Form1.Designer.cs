@@ -108,7 +108,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(349, 172);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(469, 172);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // label1
@@ -124,7 +124,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(123, 18);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(25, 3, 20, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(194, 20);
             this.textBox3.TabIndex = 6;
