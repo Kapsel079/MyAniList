@@ -23,6 +23,11 @@ namespace MyAniList
             InitializeComponent();
         }
 
+        void DbConnect(string command)
+        {
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
            
@@ -34,15 +39,15 @@ namespace MyAniList
             string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
             MySqlConnection con = new MySqlConnection(conString);
             con.Open();
-            string addRecord = "insert into list(nazwa, obejrz_odc, wszyst_odc, ocena) values('"+textBox3.Text+"','"+textBox1.Text+"','"+textBox2.Text+"','"+comboBox1.Text+"')";
-            MySqlCommand cmd = new MySqlCommand(addRecord, con);
-            int i = cmd.ExecuteNonQuery();
-            MessageBox.Show(i.ToString());
+            string action = "insert into list(nazwa, obejrz_odc, wszyst_odc, ocena) values('"+textBox3.Text+"','"+textBox1.Text+"','"+textBox2.Text+"','"+comboBox1.Text+"')";
+            MySqlCommand cmd = new MySqlCommand(action, con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Sukces!");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+    
         }
         #endregion
     }
