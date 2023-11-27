@@ -47,7 +47,15 @@ namespace MyAniList
 
         private void button2_Click(object sender, EventArgs e)
         {
-    
+            string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
+            MySqlConnection con = new MySqlConnection(conString);
+            con.Open();
+            string action = "select * from list";
+            MySqlCommand cmd = new MySqlCommand(action, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            dataGridView1.DataSource = dt;
         }
         #endregion
     }
