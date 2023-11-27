@@ -46,7 +46,7 @@ namespace MyAniList
             string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
             MySqlConnection con = new MySqlConnection(conString);
             con.Open();
-            string action = "select nazwa, obejrz_odc, wszyst_odc, ocena from list";
+            string action = "select * from list";
             MySqlCommand cmd = new MySqlCommand(action, con);
             MySqlDataReader reader = cmd.ExecuteReader();
             DataTable dt = new DataTable();
@@ -54,13 +54,18 @@ namespace MyAniList
             dataGridView1.DataSource = dt;
         }
 
-
         private void button3_Click(object sender, EventArgs e)
         {
-
+            string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
+            MySqlConnection con = new MySqlConnection(conString);
+            con.Open();
+            string action = "update list set nazwa = '" + textBox3.Text + "' where id = '"+id+"' ";
+            
+            MySqlCommand cmd = new MySqlCommand(action, con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show(textBox3.Text + " " + id);
         }
-        #endregion
-
+        
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
@@ -69,7 +74,7 @@ namespace MyAniList
             textBox2.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             comboBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
-
+        #endregion
 
     }
 }
