@@ -26,9 +26,10 @@ namespace MyAniList
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+           panel1.Show();
         }
 
+        // CRUD
         #region
         private void button1_Click(object sender, EventArgs e)
         {
@@ -129,5 +130,24 @@ namespace MyAniList
         }
         #endregion
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string login = "admin";
+            string password = "admin123";
+            string secretLogin = "Kocham koty";
+            if (textBox4.Text == login && textBox5.Text == password)
+            {
+                MessageBox.Show("Witamy " + login + "!" );
+                panel1.Hide();
+            }
+            else if (textBox4.Text == secretLogin)
+            {
+                MessageBox.Show("Witamy w sekretnym wymiarze!");
+            }
+            else
+            {
+                MessageBox.Show("Podane dane są nieprawidłowe!");
+            }
+        }
     }
 }
