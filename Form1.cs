@@ -17,7 +17,7 @@ namespace MyAniList
         string uid = "root";
         string password = "";
         string database = "anime_list";
-        string id = "0";
+        string id = "null";
 
         public Form1()
         {
@@ -77,7 +77,19 @@ namespace MyAniList
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            if (id != "null")
+            {
+                string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
+                MySqlConnection con = new MySqlConnection(conString);
+                con.Open();
+                string action = "delete from list where id = '" + id + "' ";
+                MySqlCommand cmd = new MySqlCommand(action, con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sukces!");
+            } else
+            {
+                MessageBox.Show("Proszę wybrać który rekord chcesz usunąć!");
+            }
         }
     }
 }
