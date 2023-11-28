@@ -31,6 +31,7 @@ namespace MyAniList
 
         // CRUD
         #region
+        // Dodaj
         private void button1_Click(object sender, EventArgs e)
         {
             string s = textBox1.Text; // Obejrzane odcinki
@@ -59,7 +60,7 @@ namespace MyAniList
                 MessageBox.Show("Żadne pole nie może być puste!");
             }
         }
-
+        // Odczytaj
         private void button2_Click(object sender, EventArgs e)
         {
             string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
@@ -72,7 +73,7 @@ namespace MyAniList
             dt.Load(reader);
             dataGridView1.DataSource = dt;
         }
-
+        // Zmodyfikuj
         private void button3_Click(object sender, EventArgs e)
         {
             string s = textBox1.Text; // Obejrzane odcinki
@@ -101,7 +102,7 @@ namespace MyAniList
                 MessageBox.Show("Żadne pole nie może być puste!");
             }
         }
-        
+        // Przypisywanie wartości do textboxów z pól wizualnych
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
@@ -110,7 +111,7 @@ namespace MyAniList
             textBox2.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             comboBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
-
+        // Usuń
         private void button4_Click(object sender, EventArgs e)
         {
             if (id != "null")
@@ -132,6 +133,7 @@ namespace MyAniList
 
         // Logowanie
         #region
+        // Zaloguj
         private void button5_Click(object sender, EventArgs e)
         {
             string login = "admin";

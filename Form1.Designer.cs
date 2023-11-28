@@ -113,6 +113,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.textBox1);
             this.flowLayoutPanel1.Controls.Add(this.label3);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.textBox2);
             this.flowLayoutPanel1.Controls.Add(this.label4);
             this.flowLayoutPanel1.Controls.Add(this.comboBox1);
@@ -170,7 +171,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 100);
+            this.textBox2.Location = new System.Drawing.Point(1144, 3);
             this.textBox2.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(194, 20);
@@ -179,7 +180,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 125);
+            this.label4.Location = new System.Drawing.Point(1144, 28);
             this.label4.Margin = new System.Windows.Forms.Padding(25, 2, 3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
@@ -200,7 +201,7 @@
             "3",
             "2",
             "1"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 141);
+            this.comboBox1.Location = new System.Drawing.Point(1144, 44);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(194, 21);
@@ -235,7 +236,7 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(340, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 426);
             this.panel1.TabIndex = 8;
@@ -310,7 +311,6 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(802, 450);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
