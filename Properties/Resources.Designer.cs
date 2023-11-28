@@ -63,9 +63,29 @@ namespace MyAniList.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OK6W_koKDTOqqqLDbIoPAiC8a86sHufn_jOI_JGtoCQ {
             get {
                 object obj = ResourceManager.GetObject("OK6W_koKDTOqqqLDbIoPAiC8a86sHufn_jOI-JGtoCQ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sillycat {
+            get {
+                object obj = ResourceManager.GetObject("sillycat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -130,6 +130,8 @@ namespace MyAniList
         }
         #endregion
 
+        // Logowanie
+        #region
         private void button5_Click(object sender, EventArgs e)
         {
             string login = "admin";
@@ -143,11 +145,15 @@ namespace MyAniList
             else if (textBox4.Text == secretLogin)
             {
                 MessageBox.Show("Witamy w sekretnym wymiarze!");
+                pictureBox1.Image = Properties.Resources.sillycat;
+                pictureBox1.Refresh();
+                panel1.Hide();
             }
             else
             {
                 MessageBox.Show("Podane dane są nieprawidłowe!");
             }
         }
+        #endregion
     }
 }
