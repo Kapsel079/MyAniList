@@ -59,8 +59,7 @@ namespace MyAniList
             string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
             MySqlConnection con = new MySqlConnection(conString);
             con.Open();
-            string action = "update list set nazwa = '" + textBox3.Text + "' where id = '"+id+"' ";
-            
+            string action = "update list set nazwa = '" + textBox3.Text + "', obejrz_odc = '"+textBox1.Text+ "', wszyst_odc = '"+textBox2.Text+"', ocena = '"+comboBox1.Text+"' where id = '" + id+"' ";
             MySqlCommand cmd = new MySqlCommand(action, con);
             cmd.ExecuteNonQuery();
             MessageBox.Show(textBox3.Text + " " + id);
@@ -76,5 +75,9 @@ namespace MyAniList
         }
         #endregion
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
