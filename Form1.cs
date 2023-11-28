@@ -18,7 +18,7 @@ namespace MyAniList
         string password = "";
         string database = "anime_list";
         string id = "null";
-
+        int temp;
         public Form1()
         {
             InitializeComponent();
@@ -32,13 +32,31 @@ namespace MyAniList
         #region
         private void button1_Click(object sender, EventArgs e)
         {
-            string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
-            MySqlConnection con = new MySqlConnection(conString);
-            con.Open();
-            string action = "insert into list(nazwa, obejrz_odc, wszyst_odc, ocena) values('"+textBox3.Text+"','"+textBox1.Text+"','"+textBox2.Text+"','"+comboBox1.Text+"')";
-            MySqlCommand cmd = new MySqlCommand(action, con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Sukces!");
+            string s = textBox1.Text; // Obejrzane odcinki
+            string d = textBox2.Text; // Wszystkie odcinki 
+            string f = textBox3.Text; // Nazwa
+            string g = comboBox1.Text; // Ocena
+            if (!String.IsNullOrEmpty(s) && !String.IsNullOrEmpty(d) && !String.IsNullOrEmpty(f) && int.TryParse(g, out temp) == true)
+            {
+                if (int.TryParse(s, out temp) == true && int.TryParse(d, out temp) == true)
+                {
+                    string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
+                    MySqlConnection con = new MySqlConnection(conString);
+                    con.Open();
+                    string action = "insert into list(nazwa, obejrz_odc, wszyst_odc, ocena) values('" + textBox3.Text + "','" + textBox1.Text + "','" + textBox2.Text + "','" + comboBox1.Text + "')";
+                    MySqlCommand cmd = new MySqlCommand(action, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Dane zostały pomyślnie dodane!");
+                }
+                else
+                {
+                    MessageBox.Show("Dane w polach 'Liczba obejrzanych odcinków' i 'Liczba odcinków całego sezonu' mogą być tylko cyframi!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Żadne pole nie może być puste!");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,13 +74,31 @@ namespace MyAniList
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
-            MySqlConnection con = new MySqlConnection(conString);
-            con.Open();
-            string action = "update list set nazwa = '" + textBox3.Text + "', obejrz_odc = '"+textBox1.Text+ "', wszyst_odc = '"+textBox2.Text+"', ocena = '"+comboBox1.Text+"' where id = '" + id+"' ";
-            MySqlCommand cmd = new MySqlCommand(action, con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show(textBox3.Text + " " + id);
+            string s = textBox1.Text; // Obejrzane odcinki
+            string d = textBox2.Text; // Wszystkie odcinki 
+            string f = textBox3.Text; // Nazwa
+            string g = comboBox1.Text; // Ocena
+            if (!String.IsNullOrEmpty(s) && !String.IsNullOrEmpty(d) && !String.IsNullOrEmpty(f) && int.TryParse(g, out temp) == true)
+            {
+                if (int.TryParse(s, out temp) == true && int.TryParse(d, out temp) == true)
+                {
+                    string conString = "server=" + server + ";uid=" + uid + ";pwd=" + password + ";database=" + database;
+                    MySqlConnection con = new MySqlConnection(conString);
+                    con.Open();
+                    string action = "update list set nazwa = '" + textBox3.Text + "', obejrz_odc = '" + textBox1.Text + "', wszyst_odc = '" + textBox2.Text + "', ocena = '" + comboBox1.Text + "' where id = '" + id + "' ";
+                    MySqlCommand cmd = new MySqlCommand(action, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Dane zostały pomyślnie zaktualizowane!");
+                }
+                else
+                {
+                    MessageBox.Show("Dane w polach 'Liczba obejrzanych odcinków' i 'Liczba odcinków całego sezonu' mogą być tylko cyframi!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Żadne pole nie może być puste!");
+            }
         }
         
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -73,7 +109,6 @@ namespace MyAniList
             textBox2.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             comboBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
         }
-        #endregion
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -85,11 +120,14 @@ namespace MyAniList
                 string action = "delete from list where id = '" + id + "' ";
                 MySqlCommand cmd = new MySqlCommand(action, con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Sukces!");
+                MessageBox.Show("Dane zostały pomyślnie usunięte!");
+                id = "null";
             } else
             {
                 MessageBox.Show("Proszę wybrać który rekord chcesz usunąć!");
             }
         }
+        #endregion
+
     }
 }

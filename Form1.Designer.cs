@@ -44,9 +44,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -226,6 +230,29 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(776, 426);
+            this.panel1.TabIndex = 8;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(298, 245);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(146, 20);
+            this.textBox4.TabIndex = 0;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(298, 320);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(146, 20);
+            this.textBox5.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +260,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(802, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -244,6 +272,8 @@
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -266,6 +296,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 
